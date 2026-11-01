@@ -8,16 +8,55 @@ Hypertension Risk Factors Using Logistic Regression Model in R and Python
 - Size: 638.178 observations, 7 variables
 - Target: hypertension status (binary)
 - Note: raw data is not included due to [usage terms].
-## Methods
-1. Cleaning data
-2. Exploratory Data Analysis (EDA)
-3. Handling class imbalance with ROSE
-4. Multivariate logistic regression
-5. Multicollinearity check with VIF
-6. Validation with k-fold cross-validation (k = 10)
-7. Evaluation: sensitivity, AUC, confusion matrix
-## Key Results
-- AUC: 0,7131
-- Sensitivity: 70.5%
-- Significant risk factors: regional characteristics, age, gender, marital status, employment status and Prosperous Family Card Ownership Status 
+  
+## Methodology
+The analytical workflow consists of the following steps:
+
+### 1. Data Cleaning and Preparation
+- Inspect the dataset structure, variable types, and data consistency.
+- Identify and handle missing values and duplicate observations.
+- Recode categorical variables and define the binary hypertension outcome.
+- Prepare predictor variables for statistical modeling.
+
+### 2. Exploratory Data Analysis (EDA)
+- Examine the distribution of demographic and clinical characteristics.
+- Explore the prevalence of hypertension across relevant subgroups.
+- Investigate preliminary associations between predictor variables and hypertension.
+
+### 3. Multicollinearity Assessment
+- Assess multicollinearity among predictor variables using the Variance Inflation Factor (VIF).
+- Identify highly correlated predictors that may affect the stability and interpretability of the regression coefficients.
+
+### 4. Handling Class Imbalance
+- Apply Random Over-Sampling Examples (ROSE) to address class imbalance in the training data.
+- Preserve the original class distribution in the validation data to obtain an unbiased estimate of model performance.
+
+### 5. Multivariate Logistic Regression
+- Develop a multivariate logistic regression model to investigate factors associated with hypertension.
+- Estimate regression coefficients, odds ratios, and their corresponding confidence intervals.
+- Assess the statistical significance of the predictor variables.
+
+### 6. Model Validation
+- Evaluate model performance using 10-fold cross-validation.
+- Apply data preprocessing and class balancing within each training fold to prevent data leakage.
+
+### 7. Model Evaluation
+Evaluate model performance using the following metrics:
+- Sensitivity (Recall)
+- Area Under the Receiver Operating Characteristic Curve (ROC-AUC)
+- Confusion Matrix
+
+The evaluation focuses on the model's ability to identify individuals with hypertension while assessing its overall discriminatory performance.
+**Implementation:** R and Python.
+
+## Key 
+- The model achieved a ROC-AUC of 0,7131.
+- The model achieved a sensitivity of 70.5%.
+- Significant risk factors: Regional characteristics, Age, Gender, Marital status, Employment status and Prosperous Family Card Ownership Status
+
+## Limitations
+- The analysis uses cross-sectional survey data.
+- The findings represent associations rather than causal relationships.
+- Model performance may depend on the selected predictors,
+  class balancing strategy, and classification threshold.
 
